@@ -5,7 +5,7 @@ namespace Livetodot;
 class Whois {
 
 	 // Returns the whois server to query for this TLD...
-	public function findServer($domain) {
+	public static function findServer($domain) {
 	
 		exec('whois -h whois.iana.org '.$domain, $output, $return);
 		if ((0 == $return) && is_array($output)) {
