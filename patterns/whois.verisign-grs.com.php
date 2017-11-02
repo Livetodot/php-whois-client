@@ -4,4 +4,4 @@
 
 $parsePatterns = array('registarWhois' => '/Registrar WHOIS Server: (.*)/',
                        'registrationDate' => '/Creation Date: (.*)/',
-											 'expiryDate' => '/Registry Expiry Date: (.*)/');
+                       'expiryDate' => '/Registry Expiry Date: (.*)/');
