@@ -58,7 +58,11 @@ class Whois {
 		
 		// Include whois parsing bits...
 		require_once(dirname(__FILE__).'/Whois_Parser.php');
-		require_once(dirname(__FILE__).'/patterns/'.$whoisServer.'.php');
+		if (file_exists(dirname(__FILE__).'/patterns/'.$whoisServer.'.php')) {
+			require_once(dirname(__FILE__).'/patterns/'.$whoisServer.'.php');
+		} else {
+			require_once(dirname(__FILE__).'/patterns/icann2013.php');
+		}
 
 		// Carry out the actual whois lookup and tidy up the result a little...
 		exec('whois -h '.$whoisServer.' -H '.$domain, $output, $return);
