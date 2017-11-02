@@ -81,11 +81,18 @@ class Whois {
 				}
 			}
 			
-			// Return the compiled data, either raw or parses...
+			// Return the compiled data, either raw or parsed...
 			if (true == $raw) {
 				return $whoisData;
 			} else {
-				return $whoisData;
+				$parsedData = array();
+				foreach ($parsePatterns AS $key => $pattern) {
+					$parsedLine = Whois_Parser::getElement($whoisData, $pattern);
+					if (false !== $parsedLine) {
+						$parsedData[$key] = $parsedLine;
+					}
+				}
+				return $parsedData;
 			}
 			
 		}

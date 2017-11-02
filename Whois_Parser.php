@@ -7,7 +7,7 @@ class Whois_Parser {
 	public static function getElement(array $rawWhoisData, $pattern) {
 	
 		foreach ($rawWhoisData AS $whoisLine) {
-			if (preg_match('/Registrar WHOIS Server: (.*)/', $whoisLine, $matches)) {
+			if (preg_match($pattern, $whoisLine, $matches)) {
 				return $matches[1];
 			}
 		}
