@@ -76,7 +76,7 @@ class Whois {
 			
 			// If we want extended data, we'll get that now...
 			if (true === $extended) {
-				$registrarWhois = Whois_Parser::getElement($whoisData, $parsePatterns['registarWhois']);
+				$registrarWhois = Whois_Parser::getElement($whoisData, $parsePatterns['registrarWhois']);
 				if (false !== $registrarWhois) {
 					$extendedWhoisResult = self::whoisLookup($domain, false, $registrarWhois, true);
 					if (false !== $extendedWhoisResult && is_array($extendedWhoisResult)) {
