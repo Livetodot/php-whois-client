@@ -6,4 +6,6 @@
 $parsePatterns = array('registrar' => '/Registrar: (.*)/',
                        'registrarWhois' => '/Registrar WHOIS Server: (.*)/',
                        'registrationDate' => '/Creation Date: (.*)/',
-                       'expiryDate' => '/Registry Expiry Date: (.*)/');
+                       'expiryDate' => '/Registry Expiry Date: (.*)/',
+                       'status' => '/Domain Status: (\S*)/',
+                       'nameServer' => '/Name Server: (.*)/');
